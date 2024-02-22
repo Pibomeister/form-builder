@@ -2,8 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
-import { HiExclamation } from 'react-icons/hi';
+import { useEffect } from 'react';
 import { HiOutlineExclamationTriangle } from 'react-icons/hi2';
 
 function ErrorPage({ error }: { error: Error }) {

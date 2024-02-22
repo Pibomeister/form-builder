@@ -1,15 +1,14 @@
 import { notFound } from 'next/navigation';
-
-import { getFormById } from '@/actions/form';
-import VisitButton from '@/components/visit-button';
-import FormLinkShare from '@/components/form-link-share';
-import { StatsCard } from '@/app/(dashboard)/page';
-import loading from '@/app/(dashboard)/builder/[id]/loading';
 import { FaWpforms } from 'react-icons/fa';
 import { HiCursorClick } from 'react-icons/hi';
 import { LuView } from 'react-icons/lu';
 import { TbArrowBounce } from 'react-icons/tb';
+
+import { getFormById } from '@/actions/form';
+import { StatsCard } from '@/app/(dashboard)/page';
+import FormLinkShare from '@/components/form-link-share';
 import SubmissionsTable from '@/components/submissions-table';
+import VisitButton from '@/components/visit-button';
 
 async function FormDetailPage({ params }: { params: { id: string } }) {
   const { id } = params;

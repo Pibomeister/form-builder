@@ -3,11 +3,10 @@ import { formatDistance } from 'date-fns';
 import Link from 'next/link';
 import { ReactNode, Suspense } from 'react';
 import { BiRightArrowAlt } from 'react-icons/bi';
-import { FaWpforms } from 'react-icons/fa';
+import { FaEdit, FaWpforms } from 'react-icons/fa';
 import { HiCursorClick } from 'react-icons/hi';
 import { LuView } from 'react-icons/lu';
 import { TbArrowBounce } from 'react-icons/tb';
-import { FaEdit } from 'react-icons/fa';
 
 import { getFormStats, getForms } from '@/actions/form';
 import CreateFormButton from '@/components/create-form-button';
