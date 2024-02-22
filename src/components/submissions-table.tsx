@@ -106,7 +106,6 @@ const SubmissionsTable = async ({ id }: { id: number }) => {
 
 const RowCell = ({ type, value }: { type: ElementsType; value: string }) => {
   let node: ReactNode = value;
-
   switch (type) {
     case 'CheckboxField':
       const checked = value === 'true';
