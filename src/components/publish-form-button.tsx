@@ -3,7 +3,7 @@
 import { useTransition } from 'react';
 import { MdOutlinePublish } from 'react-icons/md';
 
-import { publishForm } from '@/actions/form';
+import { publishForm, updateFormContent } from '@/actions/form';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -19,12 +19,16 @@ import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
 import { ImSpinner2 } from 'react-icons/im';
+import useDesigner from '@/components/hooks/use-designer';
 
 const PublishFormButton = ({ id }: { id: number }) => {
   const [loading, startTransition] = useTransition();
+  const { elements } = useDesigner();
   const router = useRouter();
   const onPublishForm = async () => {
     try {
+      const stringifiedElements = JSON.stringify(elements);
+      await updateFormContent(id, stringifiedElements);
       await publishForm(id);
       toast({
         title: 'Sucess',
