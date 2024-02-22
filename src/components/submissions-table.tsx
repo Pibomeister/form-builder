@@ -6,7 +6,6 @@ import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
 import { getFormWithSubmissions } from '@/actions/form';
 import { ElementsType, FormElementInstance } from '@/components/form-elements';
 import { Badge } from '@/components/ui/badge';
-import { Checkbox } from '@/components/ui/checkbox';
 import {
   Table,
   TableBody,
@@ -36,12 +35,12 @@ const SubmissionsTable = async ({ id }: { id: number }) => {
 
   formElements.forEach((element) => {
     switch (element.type) {
-      case 'TextField':
-      case 'NumberField':
       case 'TextAreaField':
-      case 'DateField':
       case 'CheckboxField':
+      case 'NumberField':
       case 'SelectField':
+      case 'TextField':
+      case 'DateField':
         columns.push({
           id: element.id,
           label: element.extraAttributes?.label,
@@ -49,15 +48,6 @@ const SubmissionsTable = async ({ id }: { id: number }) => {
           type: element.type,
         });
         break;
-        break;
-      // case 'Switch':
-      //   columns.push({
-      //     id: element.id,
-      //     label: element.extraAttributes.label,
-      //     required: element.extraAttributes.required,
-      //     type: element.type,
-      //   });
-      //   break;
       default:
         break;
     }
